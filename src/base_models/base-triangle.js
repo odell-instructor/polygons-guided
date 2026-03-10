@@ -3,7 +3,7 @@ const BasePolygon = require('./base-polygon');
 /* This class should not be accessed directly */
 class BaseTriangle extends BasePolygon {
     #sideA;
-    #sideB;
+    #sideB; // base of the triangle
     #sideC;
 
     constructor(sideA, sideB, sideC) {
@@ -18,12 +18,13 @@ class BaseTriangle extends BasePolygon {
     get sideC() { return this.#sideC; }
 
     area() {
-        .5 * this.sideB * this.height();
+        return .5 * this.sideB * this.height();
     }
 
     perimeter() {
         return this.#sideA + this.#sideB + this.#sideC;
     }
+
 
 };
 

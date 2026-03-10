@@ -3,7 +3,7 @@ const BasePolygon = require('./base-polygon');
 /* This class should not be accessed directly */
 class BaseQuadrilateral extends BasePolygon {
     #sideA;
-    #sideB;
+    #sideB; // base of the quadrilateral
     #sideC;
     #sideD;
 
