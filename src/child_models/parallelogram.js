@@ -17,6 +17,11 @@ class Parallelogram extends BaseQuadrilateral {
     height() {
         return this.area() / this.sideB;
     }
+
+    toString() {
+        return 'Parallelogram Quadrilateral';
+    }
+
 };
 
 module.exports = Parallelogram;

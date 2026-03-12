@@ -8,6 +8,8 @@ class BaseTriangle extends BasePolygon {
 
     constructor(sideA, sideB, sideC) {
         super(3);
+        /* TODO: Ensure that 1 side is not longer
+        than the other two sides combined */
         this.#sideA = sideA;
         this.#sideB = sideB;
         this.#sideC = sideC;

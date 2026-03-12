@@ -14,6 +14,10 @@ class Equilateral extends BaseTriangle {
         return Math.sqrt(Math.pow(this.sideA, 2) - 
         Math.pow(this.sideB / 2, 2));
     }
+
+    toString() {
+        return 'Equalateral Triangle';
+    }
 };
 
 module.exports = Equilateral;

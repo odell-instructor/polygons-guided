@@ -10,10 +10,12 @@ class Isosceles extends BaseTriangle {
         return Math.sqrt(Math.pow(this.sideA, 2) - 
         (Math.pow(this.sideB, 2) / 4));
     }
+
+    toString() {
+        return 'Isosceles Triangle';
+    }
+
 };
 
-const test = new Isosceles(24, 18);
-
-console.log(test.area());
 
 module.exports = Isosceles;

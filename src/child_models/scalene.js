@@ -24,8 +24,10 @@ class Scalene extends BaseTriangle {
         let value4 = this.sideA + this.sideB - this.sideC;
         return .5 * Math.sqrt(value1 * value2 * value3 * value4) / this.sideB;
     }
-} 
 
-const test = new Scalene(13, 15, 14);
+    toString() {
+        return 'Scalene Triangle';
+    }
+};
 
-console.log(test.area());
+module.exports = Scalene;

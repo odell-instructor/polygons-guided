@@ -2,8 +2,19 @@
 
 class BasePolygon {
     #sides;
+    /**
+     * @param {number} sides
+     */
     constructor(sides) {
-        this.#sides = sides;
+        try {
+            if(typeof sides === 'number' && !isNaN(sides)) {
+                this.#sides = sides;
+            } else {
+                throw new Error('Sides must be a number');
+            } 
+        } catch(error) {
+            console.error(error.message);
+        }
     }
 
     get sides() {
