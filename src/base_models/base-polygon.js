@@ -3,7 +3,7 @@
 class BasePolygon {
     #sides;
     /**
-     * @param {number} sides
+     * @param {number} sides Number of sides of the Polygon
      */
     constructor(sides) {
         try {
@@ -16,17 +16,37 @@ class BasePolygon {
             console.error(error.message);
         }
     }
-
+    
+    /**
+     * The number of sides
+     * @return {number} sides
+     */
     get sides() {
         return this.#sides;
     }
 
+    /**
+     * Returns the Area of a give Polygon
+     * @return {number} based on a measurement
+     */
     area() { }
 
+    /**
+     * Returns the Height of a given Polygon
+     * @return {number} based on a measurement
+     */
     height() { }
 
+    /**
+     * Returns the Perimeter of a given Polygon
+     * @return {number} based on a measurement
+     */
     perimeter() { }
 
+    /**
+     * Returns the Total Interior Angle of a Polygon
+     * @return {number} interior angle in degrees
+     */
     interiorAngle() {
         return (this.sides - 2) * 180;
     }
