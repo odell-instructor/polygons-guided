@@ -32,6 +32,8 @@ class Parallelogram extends BaseQuadrilateral {
                 throw new Error('Sides don\'t have a valid length');
             } else if(rad === 0 || rad === Math.PI) {
                 throw new Error('Angle must be higher than 0 and less than 180 degrees')
+            } else {
+                return answer;
             }
         } catch (error) {
             console.error(error.message);
@@ -43,6 +45,8 @@ class Parallelogram extends BaseQuadrilateral {
             let answer = this.area() / this.sideB;
             if(isNaN(answer)) {
                 throw new Error('Sides don\'t have a valid length');
+            } else {
+                return answer;
             }
         } catch (error) {
             console.error(error.message);
