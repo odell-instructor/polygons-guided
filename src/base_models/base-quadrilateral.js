@@ -19,13 +19,13 @@ class BaseQuadrilateral extends BasePolygon {
     constructor(sideA, sideB, sideC, sideD) {
         super(4);
         try {
-            if(typeof sideA === 'number' && !isNaN(sideA)) {
+            if(typeof sideA === 'number' && 
+               typeof sideB === 'number' &&
+               typeof sideC === 'number' &&
+               typeof sideD === 'number' ) {
                 this.#sideA = sideA;
-            } else if(typeof sideB === 'number' && !isNaN(sideB)) {
                 this.#sideB = sideB;
-            } else if(typeof sideC === 'number' && !isNaN(sideC)) {
                 this.#sideC = sideC;
-            } else if(typeof sideD === 'number' && !isNaN(sideD)) {
                 this.#sideD = sideD;
             } else {
                 throw new Error('Side must be a number');
@@ -56,7 +56,16 @@ class BaseQuadrilateral extends BasePolygon {
     get sideD() { return this.#sideD; }
 
     area() {
-        return this.#sideA * this.#sideB;
+        try {
+            let answer = this.#sideA * this.#sideB;
+            if(isNaN(answer)) {
+                throw new Error('Sides don\'t have a valid length');
+            } else {
+                return answer;
+            }
+        } catch(error) {
+            return new Error(error.message);
+        } 
     }
 
     height() {

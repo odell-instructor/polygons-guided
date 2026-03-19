@@ -23,14 +23,13 @@ class BaseTriangle extends BasePolygon {
                 this.#sideA = sideA;           
                 this.#sideB = sideB;           
                 this.#sideC = sideC;
-                /* TODO  Ensure that 1 side is not longer
-                than the other two sides combined */
             } else {
                 throw new Error('Side must be a number');
             }
         } catch(error) {
              console.error(error.message);
         }
+        this.verifyValues(sideA, sideB, sideC);
     }
 
     /**
@@ -49,14 +48,44 @@ class BaseTriangle extends BasePolygon {
     get sideC() { return this.#sideC; }
 
     area() {
-        return .5 * this.sideB * this.height();
+        try {
+            let answer = .5 * this.sideB * this.height();
+            if(isNaN(answer)) {
+                throw new Error('Sides don\'t have a valid length');
+            } else {
+                return answer.toFixed(2);
+            }
+        } catch(error) {
+            return new Error(error.message);
+        }
     }
 
     perimeter() {
-        return this.#sideA + this.#sideB + this.#sideC;
+        try {
+            let answer = this.#sideA + this.#sideB + this.#sideC;
+            if(isNaN(answer)) {
+                throw new Error('Sides don\'t have a valid length');
+            } else {
+                return answer.toFixed(2);
+            }
+        } catch(error) {
+            return new Error(error.message);
+        }
     }
 
-
+    verifyValues(sideA, sideB, sideC) {
+        try {
+            switch(true) {
+                case (sideA + sideB) < sideC:
+                case (sideA + sideC) < sideB:
+                case (sideB + sideC) < sideA:
+                    throw new Error('One side cannot be larger ' +
+                         'than the other two sides combined');
+            }
+        } catch(error) {
+            console.error(error.message);
+        }
+    }    
 };
 
 module.exports = BaseTriangle;

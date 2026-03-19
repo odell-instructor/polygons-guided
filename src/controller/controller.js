@@ -1,9 +1,9 @@
 
 exports.processPolygon = (polygon) => {
-    console.log(`The height of this ${polygon} is ${getPrecision(polygon.height())}`);
-    console.log(`The perimeter of the ${polygon} is ${getPrecision(polygon.perimeter())}`);
-    console.log(`The area of this ${polygon} is ${getPrecision(polygon.area())}`);
-    console.log(`The interior angle of this ${polygon} is ${getPrecision(polygon.interiorAngle())}`);
+    console.log(`The height of this ${polygon} is ${polygon.height()}`);
+    console.log(`The perimeter of the ${polygon} is ${polygon.perimeter()}`);
+    console.log(`The area of this ${polygon} is ${polygon.area()}`);
+    console.log(`The interior angle of this ${polygon} is ${polygon.interiorAngle()}`);
 }
 
 function getPrecision(value) {

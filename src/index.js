@@ -10,13 +10,13 @@ const Controller = require('./controller/controller');
 
 /* Entry level to this project */
 function main() {
-    //Controller.processPolygon(new Square(8));
+    //Controller.processPolygon(new Square('30'));
     //Controller.processPolygon(new Rectangle(16, 19));
     //Controller.processPolygon(new Parallelogram(16,19,179));
     //Controller.processPolygon(new Equilateral(42));
-    //Controller.processPolygon(new Isosceles(32, 12));
-    //Controller.processPolygon(new Scalene(21, 43, 63));
-    Controller.processPolygon(new Hexagon(54));
+    //Controller.processPolygon(new Isosceles(12, 21));
+    //Controller.processPolygon(new Scalene(21, 43, 43));
+    //Controller.processPolygon(new Hexagon(54));
     //Controller.processPolygon(new Pentagon(14));
 }
 
