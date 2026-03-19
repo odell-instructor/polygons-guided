@@ -1,4 +1,4 @@
-# polygons-guided
+# Polygon Guided Project
 
 ## 📌 Project Overview
 
